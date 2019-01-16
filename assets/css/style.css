@@ -1,0 +1,94 @@
+body,
+html {
+  height: 100%;
+}
+
+body {
+  background-image: url("../images/background-img.jpg");
+  font-family: 'Cinzel', serif;
+  min-height: 100vh;
+  margin: 0;
+}
+
+body .container .row .flex-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  list-style-type: none;
+}
+
+body .container .row .flex-container .red {
+  height: 150px;
+  width: 150px;
+  margin: 35px;
+  background-color: #ff0000;
+  border-radius: 50%;
+}
+
+body .container .row .flex-container .blue {
+  height: 150px;
+  width: 150px;
+  margin: 35px;
+  background-color: #0000ff;
+  border-radius: 50%;
+}
+
+body .container .row .flex-container .yellow {
+  height: 150px;
+  width: 150px;
+  margin: 35px;
+  background-color: #ffff00;
+  border-radius: 50%;
+}
+
+body .container .row .flex-container .green {
+  height: 150px;
+  width: 150px;
+  margin: 35px;
+  background-color: #008000;
+  border-radius: 50%;
+}
+
+body .container .row .flex-container .orange {
+  height: 150px;
+  width: 150px;
+  margin: 35px;
+  background-color: #ffa500;
+  border-radius: 50%;
+}
+
+body .container .row .flex-container .pink {
+  height: 150px;
+  width: 150px;
+  margin: 35px;
+  background-color: #ff69b4;
+  border-radius: 50%;
+}
+
+body .container .row .flex-container .purple {
+  height: 150px;
+  width: 150px;
+  margin: 35px;
+  background-color: #7d7dde;
+  border-radius: 50%;
+}
+
+body .container .row .flex-container .lblue {
+  height: 150px;
+  width: 150px;
+  margin: 35px;
+  background-color: #7dccde;
+  border-radius: 50%;
+}
+
+body .container .row .flex-container .lgreen {
+  height: 150px;
+  width: 150px;
+  margin: 35px;
+  background-color: #75e075;
+  border-radius: 50%;
+}
+/*# sourceMappingURL=style.css.map */

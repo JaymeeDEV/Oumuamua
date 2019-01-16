@@ -1,12 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Reaction Speed & Memory</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<title>Memory Game</title>
+	<script href="jquery-3.3.1.min.js"></script>
 </head>
+
 <body>
-	
+	<header class="text-center">
+		<h1>Memory Test</h1>
+		<h2>Level:<span class="level">0</span> Time:<span class="time">00</span></h2>
+	</header>
+	<main>
+		<div class="container">
+			<div class="row">
+				<ul class="flex-container col-12">
+					<li class="red"></li>
+					<li class="blue"></li>
+					<li class="yellow"></li>
+				</ul>
+			</div>
+			<div class="row">
+				<ul class="flex-container col-12">
+					<li class="green"></li>
+					<li class="orange"></li>
+					<li class="pink"></li>
+				</ul>
+			</div>
+			<div class="row">
+				<ul class="flex-container col-12">
+					<li class="purple"></li>
+					<li class="lblue"></li>
+					<li class="lgreen"></li>
+				</ul>
+			</div>
+		</div>
+	</main>
+	<h3 class="fixed-bottom text-center">Click the highlighted colours in the same sequence as shown. Good luck!</h3>
+	<script src="assets/js/main.js"></script>
 </body>
+
 </html>

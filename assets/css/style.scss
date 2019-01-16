@@ -1,0 +1,104 @@
+$bg: url("../images/background-img.jpg");
+$colors:(
+    red:#ff0000,
+    blue:#0000ff,
+    yellow:#ffff00,
+    green:#008000,
+    orange:#ffa500,
+    pink:#ff69b4,
+    purple:#7d7dde,
+    lightBlue:#7dccde,
+    lightGreen:#75e075
+);
+
+@function color($circle-colors){
+  @return map-get($colors, $circle-colors)
+}
+
+body,
+html {
+  height: 100%;
+}
+
+body {
+  background-image: $bg;
+  font-family: 'Cinzel', serif;
+  min-height: 100vh;
+  margin: 0;
+  
+
+  .container {
+    .row {
+
+      .flex-container {
+        display: flex;
+        justify-content: center;
+        list-style-type: none;
+
+        .red {
+          height: 150px;
+          width: 150px;
+          margin: 35px;
+          background-color: color(red);
+          border-radius: 50%;
+        }
+        .blue {
+          height: 150px;
+          width: 150px;
+          margin: 35px;
+          background-color: color(blue);
+          border-radius: 50%;
+        }
+        .yellow {
+          height: 150px;
+          width: 150px;
+          margin: 35px;
+          background-color: color(yellow);
+          border-radius: 50%;
+        }
+        .green {
+          height: 150px;
+          width: 150px;
+          margin: 35px;
+          background-color: color(green);
+          border-radius: 50%;
+        }
+        .orange {
+          height: 150px;
+          width: 150px;
+          margin: 35px;
+          background-color: color(orange);
+          border-radius: 50%;
+        }
+        .pink {
+          height: 150px;
+          width: 150px;
+          margin: 35px;
+          background-color: color(pink);
+          border-radius: 50%;
+        }
+        .purple{
+          height: 150px;
+          width: 150px;
+          margin: 35px;
+          background-color: color(purple);
+          border-radius: 50%;
+        }
+        .lblue{
+          height: 150px;
+          width: 150px;
+          margin: 35px;
+          background-color: color(lightBlue);
+          border-radius: 50%;
+        }
+        .lgreen{
+          height: 150px;
+          width: 150px;
+          margin: 35px;
+          background-color: color(lightGreen);
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}
