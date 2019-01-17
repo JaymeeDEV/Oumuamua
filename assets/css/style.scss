@@ -1,18 +1,31 @@
 $bg: url("../images/background-img.jpg");
-$colors:(
-    red:#ff0000,
-    blue:#0000ff,
-    yellow:#ffff00,
-    green:#008000,
-    orange:#ffa500,
-    pink:#ff69b4,
-    purple:#7d7dde,
-    lightBlue:#7dccde,
-    lightGreen:#75e075
-);
+$colors:( red:#ff0000,
+blue:#0000ff,
+yellow:#ffff00,
+green:#008000,
+orange:#ffa500,
+pink:#ff69b4,
+purple:#7d7dde,
+lightBlue:#7dccde,
+lightGreen:#75e075);
 
-@function color($circle-colors){
-  @return map-get($colors, $circle-colors)
+@function color($circle-colors) {
+  @return map-get($colors,
+  $circle-colors)
+}
+
+$phonetolaptop: 411px;
+@mixin phonetolaptop {
+  @media (min-width:#{$phonetolaptop}){
+    @content;
+  }
+}
+
+$desktop: 1080px;
+@mixin desktop {
+  @media (min-width:#{$desktop}){
+    @content;
+  }
 }
 
 body,
@@ -22,10 +35,29 @@ html {
 
 body {
   background-image: $bg;
-  font-family: 'Cinzel', serif;
+  font-family: 'Kalam', cursive;
   min-height: 100vh;
   margin: 0;
-  
+
+  .mobile-fonth1 {
+    font-size: 1.5rem;
+    @include phonetolaptop {
+      font-size: 2.5rem;
+    }
+    @include desktop{
+      font-size: 4rem;
+    }
+  }
+
+  .mobile-fonth2 {
+    font-size: 1.5rem;
+    @include phonetolaptop {
+      font-size: 2rem;
+    }
+    @include desktop{
+      font-size: 3rem;
+    }
+  }
 
   .container {
     .row {
@@ -36,69 +68,182 @@ body {
         list-style-type: none;
 
         .red {
-          height: 150px;
-          width: 150px;
-          margin: 35px;
+          height: 60px;
+          width: 60px;
+          margin: 15px;
           background-color: color(red);
           border-radius: 50%;
+
+          @include phonetolaptop {
+            height: 100px;
+            width: 100px;
+            margin: 15px;
+          }
+          @include desktop{
+            height:150px;
+            width:150px;
+            margin:25px;
+          }
         }
         .blue {
-          height: 150px;
-          width: 150px;
-          margin: 35px;
+          height: 60px;
+          width: 60px;
+          margin: 15px;
           background-color: color(blue);
           border-radius: 50%;
+
+          @include phonetolaptop {
+            height: 100px;
+            width: 100px;
+            margin: 15px;
+          }
+          @include desktop{
+            height:150px;
+            width:150px;
+            margin:25px;
+          }
         }
         .yellow {
-          height: 150px;
-          width: 150px;
-          margin: 35px;
+          height: 60px;
+          width: 60px;
+          margin: 15px;
           background-color: color(yellow);
           border-radius: 50%;
+
+          @include phonetolaptop {
+            height: 100px;
+            width: 100px;
+            margin: 15px;
+          }
+          @include desktop{
+            height:150px;
+            width:150px;
+            margin:25px;
+          }
         }
         .green {
-          height: 150px;
-          width: 150px;
-          margin: 35px;
+          height: 60px;
+          width: 60px;
+          margin: 15px;
           background-color: color(green);
           border-radius: 50%;
+
+          @include phonetolaptop {
+            height: 100px;
+            width: 100px;
+            margin: 15px;
+          }
+          @include desktop{
+            height:150px;
+            width:150px;
+            margin:25px;
+          }
         }
         .orange {
-          height: 150px;
-          width: 150px;
-          margin: 35px;
+          height: 60px;
+          width: 60px;
+          margin: 15px;
           background-color: color(orange);
           border-radius: 50%;
+
+          @include phonetolaptop {
+            height: 100px;
+            width: 100px;
+            margin: 15px;
+          }
+          @include desktop{
+            height:150px;
+            width:150px;
+            margin:25px;
+          }
         }
         .pink {
-          height: 150px;
-          width: 150px;
-          margin: 35px;
+          height: 60px;
+          width: 60px;
+          margin: 15px;
           background-color: color(pink);
           border-radius: 50%;
+
+          @include phonetolaptop {
+            height: 100px;
+            width: 100px;
+            margin: 15px;
+          }
+          @include desktop{
+            height:150px;
+            width:150px;
+            margin:25px;
+          }
         }
-        .purple{
-          height: 150px;
-          width: 150px;
-          margin: 35px;
+        .purple {
+          height: 60px;
+          width: 60px;
+          margin: 15px;
           background-color: color(purple);
           border-radius: 50%;
+
+          @include phonetolaptop {
+            height: 100px;
+            width: 100px;
+            margin: 15px;
+          }
+          @include desktop{
+            height:150px;
+            width:150px;
+            margin:25px;
+          }
         }
-        .lblue{
-          height: 150px;
-          width: 150px;
-          margin: 35px;
+        .lblue {
+          height: 60px;
+          width: 60px;
+          margin: 15px;
           background-color: color(lightBlue);
           border-radius: 50%;
+
+          @include phonetolaptop {
+            height: 100px;
+            width: 100px;
+            margin: 15px;
+          }
+          @include desktop{
+            height:150px;
+            width:150px;
+            margin:25px;
+          }
         }
-        .lgreen{
-          height: 150px;
-          width: 150px;
-          margin: 35px;
+        .lgreen {
+          height: 60px;
+          width: 60px;
+          margin: 15px;
           background-color: color(lightGreen);
           border-radius: 50%;
+
+          @include phonetolaptop {
+            height: 100px;
+            width: 100px;
+            margin: 15px;
+          }
+          @include desktop{
+            height:150px;
+            width:150px;
+            margin:25px;
+          }
         }
       }
+    }
+  }
+  .btn{
+    @include phonetolaptop{
+    padding: 10px 10px;
+    font-size:2rem;
+    line-height: 1.2;
+    margin: 5px;
+    }
+    @include desktop{
+      padding: 15px 15px;
+      font-size: 2.5rem;
+      line-height: 1.5;
+      margin: 8px;
     }
   }
 }
