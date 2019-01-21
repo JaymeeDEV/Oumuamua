@@ -1,5 +1,5 @@
 $bg: url("../images/background-img.jpg");
-$colors:( red:#ff0000,
+$colors:(red:#ff0000,
 blue:#0000ff,
 yellow:#ffff00,
 green:#008000,
@@ -15,15 +15,17 @@ lightGreen:#75e075);
 }
 
 $phonetolaptop: 411px;
+
 @mixin phonetolaptop {
-  @media (min-width:#{$phonetolaptop}){
+  @media (min-width:#{$phonetolaptop}) {
     @content;
   }
 }
 
 $desktop: 1080px;
+
 @mixin desktop {
-  @media (min-width:#{$desktop}){
+  @media (min-width:#{$desktop}) {
     @content;
   }
 }
@@ -41,20 +43,24 @@ body {
 
   .mobile-fonth1 {
     font-size: 1.5rem;
+
     @include phonetolaptop {
       font-size: 2.5rem;
     }
-    @include desktop{
+
+    @include desktop {
       font-size: 4rem;
     }
   }
 
   .mobile-fonth2 {
     font-size: 1.5rem;
+
     @include phonetolaptop {
       font-size: 2rem;
     }
-    @include desktop{
+
+    @include desktop {
       font-size: 3rem;
     }
   }
@@ -79,12 +85,18 @@ body {
             width: 100px;
             margin: 15px;
           }
-          @include desktop{
-            height:150px;
-            width:150px;
-            margin:25px;
+
+          @include desktop {
+            height: 150px;
+            width: 150px;
+            margin: 25px;
           }
         }
+
+        .red-active {
+          background-color: darken($color: red) !important;
+        }
+
         .blue {
           height: 60px;
           width: 60px;
@@ -97,12 +109,18 @@ body {
             width: 100px;
             margin: 15px;
           }
-          @include desktop{
-            height:150px;
-            width:150px;
-            margin:25px;
+
+          @include desktop {
+            height: 150px;
+            width: 150px;
+            margin: 25px;
           }
         }
+
+        .blue-active {
+          background-color: darken($color: blue) !important;
+        }
+
         .yellow {
           height: 60px;
           width: 60px;
@@ -115,12 +133,18 @@ body {
             width: 100px;
             margin: 15px;
           }
-          @include desktop{
-            height:150px;
-            width:150px;
-            margin:25px;
+
+          @include desktop {
+            height: 150px;
+            width: 150px;
+            margin: 25px;
           }
         }
+
+        .yellow-active {
+          background-color: darken($color: yellow) !important;
+        }
+
         .green {
           height: 60px;
           width: 60px;
@@ -133,12 +157,18 @@ body {
             width: 100px;
             margin: 15px;
           }
-          @include desktop{
-            height:150px;
-            width:150px;
-            margin:25px;
+
+          @include desktop {
+            height: 150px;
+            width: 150px;
+            margin: 25px;
           }
         }
+
+        .green-active {
+          background-color: darken($color: green) !important;
+        }
+
         .orange {
           height: 60px;
           width: 60px;
@@ -151,12 +181,18 @@ body {
             width: 100px;
             margin: 15px;
           }
-          @include desktop{
-            height:150px;
-            width:150px;
-            margin:25px;
+
+          @include desktop {
+            height: 150px;
+            width: 150px;
+            margin: 25px;
           }
         }
+
+        .orange-active {
+          background-color: darken($color: orange);
+        }
+
         .pink {
           height: 60px;
           width: 60px;
@@ -169,12 +205,18 @@ body {
             width: 100px;
             margin: 15px;
           }
-          @include desktop{
-            height:150px;
-            width:150px;
-            margin:25px;
+
+          @include desktop {
+            height: 150px;
+            width: 150px;
+            margin: 25px;
           }
         }
+
+        .pink-active {
+          background-color: pdarken($color: pink) !important;
+        }
+
         .purple {
           height: 60px;
           width: 60px;
@@ -187,12 +229,18 @@ body {
             width: 100px;
             margin: 15px;
           }
-          @include desktop{
-            height:150px;
-            width:150px;
-            margin:25px;
+
+          @include desktop {
+            height: 150px;
+            width: 150px;
+            margin: 25px;
           }
         }
+
+        .purple-active {
+          background-color: darken($color: purple) !important;
+        }
+
         .lblue {
           height: 60px;
           width: 60px;
@@ -205,12 +253,18 @@ body {
             width: 100px;
             margin: 15px;
           }
-          @include desktop{
-            height:150px;
-            width:150px;
-            margin:25px;
+
+          @include desktop {
+            height: 150px;
+            width: 150px;
+            margin: 25px;
           }
         }
+
+        .lblue-active {
+          background-color: darken($color: lightBlue) !important;
+        }
+
         .lgreen {
           height: 60px;
           width: 60px;
@@ -223,23 +277,30 @@ body {
             width: 100px;
             margin: 15px;
           }
-          @include desktop{
-            height:150px;
-            width:150px;
-            margin:25px;
+
+          @include desktop {
+            height: 150px;
+            width: 150px;
+            margin: 25px;
           }
+        }
+
+        .lgreen-active {
+          background-color: darken($color: lightGreen) !important;
         }
       }
     }
   }
-  .btn{
-    @include phonetolaptop{
-    padding: 10px 10px;
-    font-size:2rem;
-    line-height: 1.2;
-    margin: 5px;
+
+  .btn {
+    @include phonetolaptop {
+      padding: 10px 10px;
+      font-size: 2rem;
+      line-height: 1.2;
+      margin: 5px;
     }
-    @include desktop{
+
+    @include desktop {
       padding: 15px 15px;
       font-size: 2.5rem;
       line-height: 1.5;

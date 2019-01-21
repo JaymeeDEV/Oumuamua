@@ -76,6 +76,10 @@ body .container .row .flex-container .red {
   }
 }
 
+body .container .row .flex-container .red-active {
+  background-color: darkred !important;
+}
+
 body .container .row .flex-container .blue {
   height: 60px;
   width: 60px;
@@ -98,6 +102,10 @@ body .container .row .flex-container .blue {
     width: 150px;
     margin: 25px;
   }
+}
+
+body .container .row .flex-container .blue-active {
+  background-color: darkblue !important;
 }
 
 body .container .row .flex-container .yellow {
@@ -124,6 +132,10 @@ body .container .row .flex-container .yellow {
   }
 }
 
+body .container .row .flex-container .yellow-active {
+  background-color: #e6d47e !important;
+}
+
 body .container .row .flex-container .green {
   height: 60px;
   width: 60px;
@@ -146,6 +158,10 @@ body .container .row .flex-container .green {
     width: 150px;
     margin: 25px;
   }
+}
+
+body .container .row .flex-container .green-active {
+  background-color: darkgreen !important;
 }
 
 body .container .row .flex-container .orange {
@@ -172,6 +188,10 @@ body .container .row .flex-container .orange {
   }
 }
 
+body .container .row .flex-container .orange-active {
+  background-color: darkorange;
+}
+
 body .container .row .flex-container .pink {
   height: 60px;
   width: 60px;
@@ -194,6 +214,10 @@ body .container .row .flex-container .pink {
     width: 150px;
     margin: 25px;
   }
+}
+
+body .container .row .flex-container .pink-active {
+  background-color: palevioletred !important;
 }
 
 body .container .row .flex-container .purple {
@@ -220,6 +244,10 @@ body .container .row .flex-container .purple {
   }
 }
 
+body .container .row .flex-container .purple-active {
+  background-color: #7b007b !important;
+}
+
 body .container .row .flex-container .lblue {
   height: 60px;
   width: 60px;
@@ -244,6 +272,10 @@ body .container .row .flex-container .lblue {
   }
 }
 
+body .container .row .flex-container .lblue-active {
+  background-color: blue !important;
+}
+
 body .container .row .flex-container .lgreen {
   height: 60px;
   width: 60px;
@@ -266,6 +298,10 @@ body .container .row .flex-container .lgreen {
     width: 150px;
     margin: 25px;
   }
+}
+
+body .container .row .flex-container .lgreen-active {
+  background-color: lightseagreen !important;
 }
 
 @media (min-width: 411px) {
