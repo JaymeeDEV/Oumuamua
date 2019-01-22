@@ -14,18 +14,32 @@ $(document).ready(function () {
     userCycle = [];
     simonPattern();
   })
+
   //Listen to user
   $(".circle").click(function () {
     id = $(this).attr("id");
     color = $(this).attr("class").split(" ")[1];
     userCycle.push(id);
     addClassCycle(id, color);
+
     //Checking User Cycle
     if (checkUserCycle()) {
       displayError();
-      userCycle();
+      userPattern();
       simonPattern();
     }
+    
+    function userPattern() {
+      userCycle.push(id);
+      console.log(id + " " + color);
+      addClassCycle(id, color);
+      checkUserCycle();
+      error = true;
+      displayError();
+      userCycle = [];
+      simonPattern();
+    }
+
     //End of cycle
     if (userCycle.length == simonCycle.length && userCycle.length < NUM_OF_LEVELS) {
       level++;
@@ -37,7 +51,6 @@ $(document).ready(function () {
       $(".level").text("You Win!");
     }
   })
-})
 
 //Checking if user cycle against simon cycle
 function checkUserCycle() {
@@ -69,12 +82,11 @@ function displayError() {
 function simonPattern() {
   console.log("level " + level);
   $(".level").text(level);
-  if (!displayError) {
-    getRandomNumber();
-  }
+  getRandomNumber();
   var i = 0;
   var myInterval = setInterval(function () {
     id = simonCycle[i];
+    console.log(id);
     color = $("#" + id).attr("class");
     color = color.split(" ")[1];
     console.log(id + " " + color);
@@ -89,7 +101,7 @@ function simonPattern() {
 // Create random cycle
 function getRandomNumber() {
   var random = Math.floor(Math.random() * 9);
-  simonPattern.push(random);
+  simonCycle.push(random);
 }
 
 // Add temporary class to circle
@@ -99,3 +111,4 @@ function addClassCycle(id, color) {
     $("#" + id).removeClass(color + "-active");
   }, 500);
 }
+})
