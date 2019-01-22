@@ -1,7 +1,7 @@
 // Variables
-userCycle = [];
-simonCycle = [];
-const NUM_OF_LEVELS = 3;
+let userCycle = [];
+let simonCycle = [];
+const NUM_OF_LEVELS = 12;
 var id, color, level = 0;
 
 // Start cycle
@@ -19,39 +19,31 @@ $(document).ready(function () {
   $(".circle").click(function () {
     id = $(this).attr("id");
     color = $(this).attr("class").split(" ")[1];
-    userCycle.push(id);
-    addClassCycle(id, color);
+    userPattern();
+  });
+})
 
-    //Checking User Cycle
-    if (checkUserCycle()) {
-      displayError();
-      userPattern();
-      simonPattern();
-    }
-    
-    function userPattern() {
-      userCycle.push(id);
-      console.log(id + " " + color);
-      addClassCycle(id, color);
-      checkUserCycle();
-      error = true;
-      displayError();
-      userCycle = [];
-      simonPattern();
-    }
+//Checking user pattern
+function userPattern() {
+  userCycle.push(id);
+  addClassCycle(id, color);
+  checkUserCycle();
+  if (!checkUserCycle()) {
+    displayError();
+    userCycle = [];
+  }
 
-    //End of cycle
-    if (userCycle.length == simonCycle.length && userCycle.length < NUM_OF_LEVELS) {
-      level++;
-      userCycle = [];
-      simonPattern();
-    }
-    //Checking for wins
-    if (userCycle.length == simonCycle.length) {
-      $(".level").text("You Win!");
-    }
-  })
-
+  //End of cycle
+  if (userCycle.length == simonCycle.length && userCycle.length < NUM_OF_LEVELS) {
+    level++;
+    userCycle = [];
+    simonPattern();
+  }
+  //Checking for win
+  if (userCycle.length == simonCycle.length) {
+    $(".level").text("You Win!");
+  }
+}
 //Checking if user cycle against simon cycle
 function checkUserCycle() {
   for (var i = 0; i < userCycle.length; i++) {
@@ -64,7 +56,6 @@ function checkUserCycle() {
 
 //Displaying an error message
 function displayError() {
-  console.log("Fail");
   var counter = [0];
   var myError = setInterval(function () {
     $(".level").text("Fail");
@@ -80,16 +71,13 @@ function displayError() {
 
 // Simon cycle 
 function simonPattern() {
-  console.log("level " + level);
   $(".level").text(level);
   getRandomNumber();
   var i = 0;
   var myInterval = setInterval(function () {
     id = simonCycle[i];
-    console.log(id);
     color = $("#" + id).attr("class");
     color = color.split(" ")[1];
-    console.log(id + " " + color);
     addClassCycle(id, color);
     i++;
     if (i == simonCycle.length) {
@@ -111,4 +99,3 @@ function addClassCycle(id, color) {
     $("#" + id).removeClass(color + "-active");
   }, 500);
 }
-})
