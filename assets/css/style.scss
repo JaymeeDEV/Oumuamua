@@ -1,13 +1,28 @@
+@import url("https://fonts.googleapis.com/css?family=Kalam");
 $bg: url("../images/background-img.jpg");
 $colors:(red:#ff0000,
+darkRed:#8b0000,
 blue:#0000ff,
+darkBlue:#003366,
 yellow:#ffff00,
+darkYellow:#CCCC00,
 green:#008000,
+darkGreen:#006400,
 orange:#ffa500,
+darkOrange:#EE7600,
 pink:#ff69b4,
+darkPink:#e75480,
 purple:#7d7dde,
+darkPurple:#551A8B,
 lightBlue:#7dccde,
-lightGreen:#75e075);
+navy:#000080,
+lightGreen:#75e075,
+soylentGreen:#8BA870);
+@keyframes rainbow {
+  0% {border-color: hsl(0, 100%, 50%);}
+  100% {border-color: hsl(255, 100%, 50%);}
+}
+
 
 @function color($circle-colors) {
   @return map-get($colors,
@@ -66,10 +81,12 @@ body {
   }
 
   .container {
-    .row {
+    .flex-container {
+      border-radius:10%;
+      border: 20px solid hsl(0, 100%, 50%);
+      -webkit-animation: rainbow 5s infinite alternate;
 
-      .flex-container {
-        display: flex;
+      .row {
         justify-content: center;
         list-style-type: none;
 
@@ -94,7 +111,8 @@ body {
         }
 
         .red-active {
-          background-color: darken($color: red) !important;
+          border: solid 10px;
+          background-color: color(darkRed) !important;
         }
 
         .blue {
@@ -118,7 +136,8 @@ body {
         }
 
         .blue-active {
-          background-color: darken($color: blue) !important;
+          border: solid 10px;
+          background-color: color(darkBlue) !important;
         }
 
         .yellow {
@@ -142,7 +161,8 @@ body {
         }
 
         .yellow-active {
-          background-color: darken($color: yellow) !important;
+          border: solid 10px;
+          background-color: color(darkYellow) !important;
         }
 
         .green {
@@ -166,7 +186,8 @@ body {
         }
 
         .green-active {
-          background-color: darken($color: green) !important;
+          border: solid 10px;
+          background-color: color(darkGreen) !important;
         }
 
         .orange {
@@ -190,7 +211,8 @@ body {
         }
 
         .orange-active {
-          background-color: darken($color: orange);
+          border: solid 10px;
+          background-color: color(darkOrange);
         }
 
         .pink {
@@ -214,7 +236,8 @@ body {
         }
 
         .pink-active {
-          background-color: pdarken($color: pink) !important;
+          border: solid 10px;
+          background-color: color(darkPink) !important;
         }
 
         .purple {
@@ -238,7 +261,8 @@ body {
         }
 
         .purple-active {
-          background-color: darken($color: purple) !important;
+          border: solid 10px;
+          background-color: color(darkPurple) !important;
         }
 
         .lblue {
@@ -262,7 +286,8 @@ body {
         }
 
         .lblue-active {
-          background-color: darken($color: lightBlue) !important;
+          border: solid 10px;
+          background-color: color(navy) !important;
         }
 
         .lgreen {
@@ -286,7 +311,8 @@ body {
         }
 
         .lgreen-active {
-          background-color: darken($color: lightGreen) !important;
+          border: solid 10px;
+          background-color: color(soylentGreen) !important;
         }
       }
     }

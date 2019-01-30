@@ -2,18 +2,23 @@
 let userCycle = [];
 let simonCycle = [];
 const NUM_OF_LEVELS = 12;
-var id, color, level = 0;
+let id;
+let color;
+let level = 0;
 
 // Start cycle
 $(document).ready(function () {
   $(".level").text("");
-  $(".btn-success").click(function () {
+  $(".btn-dark").click(function () {
+    if ($(this).html() === "START"){
+      $(this).html("RESET");
+    }
     level = 0;
     level++;
     simonCycle = [];
     userCycle = [];
     simonPattern();
-  })
+  });
 
   //Listen to user
   $(".circle").click(function () {
@@ -21,7 +26,7 @@ $(document).ready(function () {
     color = $(this).attr("class").split(" ")[1];
     userPattern();
   });
-})
+});
 
 //Checking user pattern
 function userPattern() {
@@ -34,16 +39,23 @@ function userPattern() {
   }
 
   //End of cycle
-  if (userCycle.length == simonCycle.length && userCycle.length < NUM_OF_LEVELS) {
+  var myInterval = setInterval(function (){
+  if (userCycle.length == simonCycle.length &&
+    userCycle.length < NUM_OF_LEVELS) {
     level++;
     userCycle = [];
     simonPattern();
+    shuffle();
   }
+
   //Checking for win
-  if (userCycle.length == simonCycle.length) {
+  if (userCycle.length === simonCycle.length) {
     $(".level").text("You Win!");
   }
+  clearInterval(myInterval);
+  }, 2000);
 }
+
 //Checking if user cycle against simon cycle
 function checkUserCycle() {
   for (var i = 0; i < userCycle.length; i++) {
@@ -58,9 +70,11 @@ function checkUserCycle() {
 function displayError() {
   var counter = [0];
   var myError = setInterval(function () {
-    $(".level").text("Fail");
+    $(".level-text").text("");
+    $(".level").text("Oops, try again!");
     counter++;
     if (counter == 3) {
+      $(".level-text").text("Level:");
       $(".level").text(level);
       clearInterval(myError);
       userCycle = [];
@@ -69,7 +83,7 @@ function displayError() {
   }, 500);
 }
 
-// Simon cycle 
+// Simon function
 function simonPattern() {
   $(".level").text(level);
   getRandomNumber();
@@ -98,4 +112,12 @@ function addClassCycle(id, color) {
   setTimeout(function () {
     $("#" + id).removeClass(color + "-active");
   }, 500);
+}
+ 
+// Shuffles the array of circles
+function shuffle() {
+  var ul = document.querySelector("ul");
+  for (var i = ul.children.length; i >= 0; i--) {
+    ul.appendChild(ul.children[Math.random() * i | 0]);
+  }
 }

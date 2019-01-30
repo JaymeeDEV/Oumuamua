@@ -1,3 +1,21 @@
+@import url("https://fonts.googleapis.com/css?family=Kalam");
+@-webkit-keyframes rainbow {
+  0% {
+    border-color: red;
+  }
+  100% {
+    border-color: #4000ff;
+  }
+}
+@keyframes rainbow {
+  0% {
+    border-color: red;
+  }
+  100% {
+    border-color: #4000ff;
+  }
+}
+
 body,
 html {
   height: 100%;
@@ -42,17 +60,20 @@ body .mobile-fonth2 {
   }
 }
 
-body .container .row .flex-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+body .container .flex-container {
+  border-radius: 10%;
+  border: 20px solid red;
+  -webkit-animation: rainbow 5s infinite alternate;
+}
+
+body .container .flex-container .row {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   list-style-type: none;
 }
 
-body .container .row .flex-container .red {
+body .container .flex-container .row .red {
   height: 60px;
   width: 60px;
   margin: 15px;
@@ -61,7 +82,7 @@ body .container .row .flex-container .red {
 }
 
 @media (min-width: 411px) {
-  body .container .row .flex-container .red {
+  body .container .flex-container .row .red {
     height: 100px;
     width: 100px;
     margin: 15px;
@@ -69,18 +90,19 @@ body .container .row .flex-container .red {
 }
 
 @media (min-width: 1080px) {
-  body .container .row .flex-container .red {
+  body .container .flex-container .row .red {
     height: 150px;
     width: 150px;
     margin: 25px;
   }
 }
 
-body .container .row .flex-container .red-active {
-  background-color: darkred !important;
+body .container .flex-container .row .red-active {
+  border: solid 10px;
+  background-color: #8b0000 !important;
 }
 
-body .container .row .flex-container .blue {
+body .container .flex-container .row .blue {
   height: 60px;
   width: 60px;
   margin: 15px;
@@ -89,7 +111,7 @@ body .container .row .flex-container .blue {
 }
 
 @media (min-width: 411px) {
-  body .container .row .flex-container .blue {
+  body .container .flex-container .row .blue {
     height: 100px;
     width: 100px;
     margin: 15px;
@@ -97,18 +119,19 @@ body .container .row .flex-container .blue {
 }
 
 @media (min-width: 1080px) {
-  body .container .row .flex-container .blue {
+  body .container .flex-container .row .blue {
     height: 150px;
     width: 150px;
     margin: 25px;
   }
 }
 
-body .container .row .flex-container .blue-active {
-  background-color: darkblue !important;
+body .container .flex-container .row .blue-active {
+  border: solid 10px;
+  background-color: #003366 !important;
 }
 
-body .container .row .flex-container .yellow {
+body .container .flex-container .row .yellow {
   height: 60px;
   width: 60px;
   margin: 15px;
@@ -117,7 +140,7 @@ body .container .row .flex-container .yellow {
 }
 
 @media (min-width: 411px) {
-  body .container .row .flex-container .yellow {
+  body .container .flex-container .row .yellow {
     height: 100px;
     width: 100px;
     margin: 15px;
@@ -125,18 +148,19 @@ body .container .row .flex-container .yellow {
 }
 
 @media (min-width: 1080px) {
-  body .container .row .flex-container .yellow {
+  body .container .flex-container .row .yellow {
     height: 150px;
     width: 150px;
     margin: 25px;
   }
 }
 
-body .container .row .flex-container .yellow-active {
-  background-color: #e6d47e !important;
+body .container .flex-container .row .yellow-active {
+  border: solid 10px;
+  background-color: #CCCC00 !important;
 }
 
-body .container .row .flex-container .green {
+body .container .flex-container .row .green {
   height: 60px;
   width: 60px;
   margin: 15px;
@@ -145,7 +169,7 @@ body .container .row .flex-container .green {
 }
 
 @media (min-width: 411px) {
-  body .container .row .flex-container .green {
+  body .container .flex-container .row .green {
     height: 100px;
     width: 100px;
     margin: 15px;
@@ -153,18 +177,19 @@ body .container .row .flex-container .green {
 }
 
 @media (min-width: 1080px) {
-  body .container .row .flex-container .green {
+  body .container .flex-container .row .green {
     height: 150px;
     width: 150px;
     margin: 25px;
   }
 }
 
-body .container .row .flex-container .green-active {
-  background-color: darkgreen !important;
+body .container .flex-container .row .green-active {
+  border: solid 10px;
+  background-color: #006400 !important;
 }
 
-body .container .row .flex-container .orange {
+body .container .flex-container .row .orange {
   height: 60px;
   width: 60px;
   margin: 15px;
@@ -173,7 +198,7 @@ body .container .row .flex-container .orange {
 }
 
 @media (min-width: 411px) {
-  body .container .row .flex-container .orange {
+  body .container .flex-container .row .orange {
     height: 100px;
     width: 100px;
     margin: 15px;
@@ -181,18 +206,19 @@ body .container .row .flex-container .orange {
 }
 
 @media (min-width: 1080px) {
-  body .container .row .flex-container .orange {
+  body .container .flex-container .row .orange {
     height: 150px;
     width: 150px;
     margin: 25px;
   }
 }
 
-body .container .row .flex-container .orange-active {
-  background-color: darkorange;
+body .container .flex-container .row .orange-active {
+  border: solid 10px;
+  background-color: #EE7600;
 }
 
-body .container .row .flex-container .pink {
+body .container .flex-container .row .pink {
   height: 60px;
   width: 60px;
   margin: 15px;
@@ -201,7 +227,7 @@ body .container .row .flex-container .pink {
 }
 
 @media (min-width: 411px) {
-  body .container .row .flex-container .pink {
+  body .container .flex-container .row .pink {
     height: 100px;
     width: 100px;
     margin: 15px;
@@ -209,18 +235,19 @@ body .container .row .flex-container .pink {
 }
 
 @media (min-width: 1080px) {
-  body .container .row .flex-container .pink {
+  body .container .flex-container .row .pink {
     height: 150px;
     width: 150px;
     margin: 25px;
   }
 }
 
-body .container .row .flex-container .pink-active {
-  background-color: palevioletred !important;
+body .container .flex-container .row .pink-active {
+  border: solid 10px;
+  background-color: #e75480 !important;
 }
 
-body .container .row .flex-container .purple {
+body .container .flex-container .row .purple {
   height: 60px;
   width: 60px;
   margin: 15px;
@@ -229,7 +256,7 @@ body .container .row .flex-container .purple {
 }
 
 @media (min-width: 411px) {
-  body .container .row .flex-container .purple {
+  body .container .flex-container .row .purple {
     height: 100px;
     width: 100px;
     margin: 15px;
@@ -237,18 +264,19 @@ body .container .row .flex-container .purple {
 }
 
 @media (min-width: 1080px) {
-  body .container .row .flex-container .purple {
+  body .container .flex-container .row .purple {
     height: 150px;
     width: 150px;
     margin: 25px;
   }
 }
 
-body .container .row .flex-container .purple-active {
-  background-color: #7b007b !important;
+body .container .flex-container .row .purple-active {
+  border: solid 10px;
+  background-color: #551A8B !important;
 }
 
-body .container .row .flex-container .lblue {
+body .container .flex-container .row .lblue {
   height: 60px;
   width: 60px;
   margin: 15px;
@@ -257,7 +285,7 @@ body .container .row .flex-container .lblue {
 }
 
 @media (min-width: 411px) {
-  body .container .row .flex-container .lblue {
+  body .container .flex-container .row .lblue {
     height: 100px;
     width: 100px;
     margin: 15px;
@@ -265,18 +293,19 @@ body .container .row .flex-container .lblue {
 }
 
 @media (min-width: 1080px) {
-  body .container .row .flex-container .lblue {
+  body .container .flex-container .row .lblue {
     height: 150px;
     width: 150px;
     margin: 25px;
   }
 }
 
-body .container .row .flex-container .lblue-active {
-  background-color: blue !important;
+body .container .flex-container .row .lblue-active {
+  border: solid 10px;
+  background-color: #000080 !important;
 }
 
-body .container .row .flex-container .lgreen {
+body .container .flex-container .row .lgreen {
   height: 60px;
   width: 60px;
   margin: 15px;
@@ -285,7 +314,7 @@ body .container .row .flex-container .lgreen {
 }
 
 @media (min-width: 411px) {
-  body .container .row .flex-container .lgreen {
+  body .container .flex-container .row .lgreen {
     height: 100px;
     width: 100px;
     margin: 15px;
@@ -293,15 +322,16 @@ body .container .row .flex-container .lgreen {
 }
 
 @media (min-width: 1080px) {
-  body .container .row .flex-container .lgreen {
+  body .container .flex-container .row .lgreen {
     height: 150px;
     width: 150px;
     margin: 25px;
   }
 }
 
-body .container .row .flex-container .lgreen-active {
-  background-color: lightseagreen !important;
+body .container .flex-container .row .lgreen-active {
+  border: solid 10px;
+  background-color: #8BA870 !important;
 }
 
 @media (min-width: 411px) {
