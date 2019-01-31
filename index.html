@@ -8,6 +8,10 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	<title>Memory Game</title>
+	<script>
+		var clicksound = new Audio();
+		clicksound.src = "assets/audio/clicksound.wav";
+	</script>
 </head>
 
 <body>
@@ -18,31 +22,31 @@
 	<!-- Layout used for css grids -->
 	<div id="container">
 		<div class="grid-item">
-			<div id="0" class="circle red"></div>
+			<div id="0" class="circle red" onmousedown="clicksound.play()"></div>
 		</div>
 		<div class="grid-item">
-			<div id="1" class="circle blue"></div>
+			<div id="1" class="circle blue" onmousedown="clicksound.play()"></div>
 		</div>
 		<div class="grid-item">
-			<div id="2" class="circle yellow"></div>
+			<div id="2" class="circle yellow" onmousedown="clicksound.play()"></div>
 		</div>
 		<div class="grid-item">
-			<div id="3" class="circle green"></div>
+			<div id="3" class="circle green" onmousedown="clicksound.play()"></div>
 		</div>
 		<div class="grid-item">
-			<div id="4" class="circle orange"></div>
+			<div id="4" class="circle orange" onmousedown="clicksound.play()"></div>
 		</div>
 		<div class="grid-item">
-			<div id="5" class="circle pink"></div>
+			<div id="5" class="circle pink" onmousedown="clicksound.play()"></div>
 		</div>
 		<div class="grid-item">
-			<div id="6" class="circle purple"></div>
+			<div id="6" class="circle purple" onmousedown="clicksound.play()"></div>
 		</div>
 		<div class="grid-item">
-			<div id="7" class="circle lblue"></div>
+			<div id="7" class="circle lblue" onmousedown="clicksound.play()"></div>
 		</div>
 		<div class="grid-item">
-			<div id="8" class="circle lgreen"></div>
+			<div id="8" class="circle lgreen" onmousedown="clicksound.play()"></div>
 		</div>
 	</div>
 	<!-- Bootstrap used for buttons and responsive design -->
@@ -52,9 +56,10 @@
 			</div>
 		</div>
 		<!-- Text hidden on smaller devices using 'd-none' and 'd-md-block' -->
-		<h3 class="fixed-bottom text-center d-none d-md-block">Click the highlighted colours in the same sequence as shown. Good luck!</h3>
-		</div>
-		<script src="assets/js/main.js"></script>
+		<h3 class="fixed-bottom text-center d-none d-md-block">Click the highlighted colours in the same sequence as shown.
+			Good luck!</h3>
+	</div>
+	<script src="assets/js/main.js"></script>
 </body>
 
 </html>
