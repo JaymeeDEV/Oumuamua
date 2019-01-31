@@ -10,7 +10,7 @@ let level = 0;
 $(document).ready(function () {
   $(".level").text("");
   $(".btn-dark").click(function () {
-    if ($(this).html() === "START"){
+    if ($(this).html() === "START") {
       $(this).html("RESET");
     }
     level = 0;
@@ -39,20 +39,20 @@ function userPattern() {
   }
 
   //End of cycle
-  var myInterval = setInterval(function (){
-  if (userCycle.length == simonCycle.length &&
-    userCycle.length < NUM_OF_LEVELS) {
-    level++;
-    userCycle = [];
-    simonPattern();
-    shuffle();
-  }
+  var myInterval = setInterval(function () {
+    if (userCycle.length == simonCycle.length &&
+      userCycle.length < NUM_OF_LEVELS) {
+      level++;
+      userCycle = [];
+      simonPattern();
+      shuffle();
+    }
 
-  //Checking for win
-  if (userCycle.length === simonCycle.length) {
-    $(".level").text("You Win!");
-  }
-  clearInterval(myInterval);
+    //Checking for win
+    if (userCycle.length === simonCycle.length) {
+      $(".level").text("You Win!");
+    }
+    clearInterval(myInterval);
   }, 2000);
 }
 
@@ -113,11 +113,11 @@ function addClassCycle(id, color) {
     $("#" + id).removeClass(color + "-active");
   }, 500);
 }
- 
-// Shuffles the array of circles
+
+// Shuffles the child elements of "#container" which are the circles
 function shuffle() {
-  var ul = document.querySelector("ul");
-  for (var i = ul.children.length; i >= 0; i--) {
-    ul.appendChild(ul.children[Math.random() * i | 0]);
+  var parent = document.querySelector("#container");
+  for (var i = 0; i < parent.children.length; i++) {
+    parent.appendChild(parent.children[Math.random() * i | 0]);
   }
 }
