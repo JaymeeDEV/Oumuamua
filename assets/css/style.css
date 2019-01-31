@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Kalam");
+/*Colors used for circles*/
+/*Colors for rainbow, grabbed on line 106 of style.scss*/
 @-webkit-keyframes rainbow {
   0% {
     border-color: red;
@@ -16,6 +18,10 @@
   }
 }
 
+/*Function grabs colors from the colors array*/
+/*Mixins for responsive design;
+used more frequently in earlier versions,
+still used for responsive buttons*/
 body,
 html {
   height: 100%;
@@ -60,282 +66,118 @@ body .mobile-fonth2 {
   }
 }
 
-body .container .flex-container {
+#container {
+  /*Container styles for responsive design*/
+  margin-bottom: 5vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto;
+      grid-template-columns: auto auto auto;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  /* Rainbow border*/
   border-radius: 10%;
   border: 20px solid red;
   -webkit-animation: rainbow 5s infinite alternate;
 }
 
-body .container .flex-container .row {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  list-style-type: none;
+#container .grid-item {
+  /*Use of the'!important' property is to override the base color with the active one*/
 }
 
-body .container .flex-container .row .red {
-  height: 60px;
-  width: 60px;
-  margin: 15px;
-  background-color: #ff0000;
+#container .grid-item .circle {
+  height: 12vmin;
+  width: 12vmin;
+  min-height: 60px;
+  min-width: 60px;
   border-radius: 50%;
+  margin: 25px auto;
 }
 
-@media (min-width: 411px) {
-  body .container .flex-container .row .red {
-    height: 100px;
-    width: 100px;
-    margin: 15px;
-  }
+#container .grid-item .red {
+  background-color: #ff0000;
 }
 
-@media (min-width: 1080px) {
-  body .container .flex-container .row .red {
-    height: 150px;
-    width: 150px;
-    margin: 25px;
-  }
-}
-
-body .container .flex-container .row .red-active {
+#container .grid-item .red-active {
   border: solid 10px;
   background-color: #8b0000 !important;
 }
 
-body .container .flex-container .row .blue {
-  height: 60px;
-  width: 60px;
-  margin: 15px;
+#container .grid-item .blue {
   background-color: #0000ff;
-  border-radius: 50%;
 }
 
-@media (min-width: 411px) {
-  body .container .flex-container .row .blue {
-    height: 100px;
-    width: 100px;
-    margin: 15px;
-  }
-}
-
-@media (min-width: 1080px) {
-  body .container .flex-container .row .blue {
-    height: 150px;
-    width: 150px;
-    margin: 25px;
-  }
-}
-
-body .container .flex-container .row .blue-active {
+#container .grid-item .blue-active {
   border: solid 10px;
   background-color: #003366 !important;
 }
 
-body .container .flex-container .row .yellow {
-  height: 60px;
-  width: 60px;
-  margin: 15px;
+#container .grid-item .yellow {
   background-color: #ffff00;
-  border-radius: 50%;
 }
 
-@media (min-width: 411px) {
-  body .container .flex-container .row .yellow {
-    height: 100px;
-    width: 100px;
-    margin: 15px;
-  }
-}
-
-@media (min-width: 1080px) {
-  body .container .flex-container .row .yellow {
-    height: 150px;
-    width: 150px;
-    margin: 25px;
-  }
-}
-
-body .container .flex-container .row .yellow-active {
+#container .grid-item .yellow-active {
   border: solid 10px;
   background-color: #CCCC00 !important;
 }
 
-body .container .flex-container .row .green {
-  height: 60px;
-  width: 60px;
-  margin: 15px;
+#container .grid-item .green {
   background-color: #008000;
-  border-radius: 50%;
 }
 
-@media (min-width: 411px) {
-  body .container .flex-container .row .green {
-    height: 100px;
-    width: 100px;
-    margin: 15px;
-  }
-}
-
-@media (min-width: 1080px) {
-  body .container .flex-container .row .green {
-    height: 150px;
-    width: 150px;
-    margin: 25px;
-  }
-}
-
-body .container .flex-container .row .green-active {
+#container .grid-item .green-active {
   border: solid 10px;
   background-color: #006400 !important;
 }
 
-body .container .flex-container .row .orange {
-  height: 60px;
-  width: 60px;
-  margin: 15px;
+#container .grid-item .orange {
   background-color: #ffa500;
-  border-radius: 50%;
 }
 
-@media (min-width: 411px) {
-  body .container .flex-container .row .orange {
-    height: 100px;
-    width: 100px;
-    margin: 15px;
-  }
-}
-
-@media (min-width: 1080px) {
-  body .container .flex-container .row .orange {
-    height: 150px;
-    width: 150px;
-    margin: 25px;
-  }
-}
-
-body .container .flex-container .row .orange-active {
+#container .grid-item .orange-active {
   border: solid 10px;
   background-color: #EE7600;
 }
 
-body .container .flex-container .row .pink {
-  height: 60px;
-  width: 60px;
-  margin: 15px;
+#container .grid-item .pink {
   background-color: #ff69b4;
-  border-radius: 50%;
 }
 
-@media (min-width: 411px) {
-  body .container .flex-container .row .pink {
-    height: 100px;
-    width: 100px;
-    margin: 15px;
-  }
-}
-
-@media (min-width: 1080px) {
-  body .container .flex-container .row .pink {
-    height: 150px;
-    width: 150px;
-    margin: 25px;
-  }
-}
-
-body .container .flex-container .row .pink-active {
+#container .grid-item .pink-active {
   border: solid 10px;
   background-color: #e75480 !important;
 }
 
-body .container .flex-container .row .purple {
-  height: 60px;
-  width: 60px;
-  margin: 15px;
+#container .grid-item .purple {
   background-color: #7d7dde;
-  border-radius: 50%;
 }
 
-@media (min-width: 411px) {
-  body .container .flex-container .row .purple {
-    height: 100px;
-    width: 100px;
-    margin: 15px;
-  }
-}
-
-@media (min-width: 1080px) {
-  body .container .flex-container .row .purple {
-    height: 150px;
-    width: 150px;
-    margin: 25px;
-  }
-}
-
-body .container .flex-container .row .purple-active {
+#container .grid-item .purple-active {
   border: solid 10px;
   background-color: #551A8B !important;
 }
 
-body .container .flex-container .row .lblue {
-  height: 60px;
-  width: 60px;
-  margin: 15px;
+#container .grid-item .lblue {
   background-color: #7dccde;
-  border-radius: 50%;
 }
 
-@media (min-width: 411px) {
-  body .container .flex-container .row .lblue {
-    height: 100px;
-    width: 100px;
-    margin: 15px;
-  }
-}
-
-@media (min-width: 1080px) {
-  body .container .flex-container .row .lblue {
-    height: 150px;
-    width: 150px;
-    margin: 25px;
-  }
-}
-
-body .container .flex-container .row .lblue-active {
+#container .grid-item .lblue-active {
   border: solid 10px;
   background-color: #000080 !important;
 }
 
-body .container .flex-container .row .lgreen {
-  height: 60px;
-  width: 60px;
-  margin: 15px;
+#container .grid-item .lgreen {
   background-color: #75e075;
-  border-radius: 50%;
 }
 
-@media (min-width: 411px) {
-  body .container .flex-container .row .lgreen {
-    height: 100px;
-    width: 100px;
-    margin: 15px;
-  }
-}
-
-@media (min-width: 1080px) {
-  body .container .flex-container .row .lgreen {
-    height: 150px;
-    width: 150px;
-    margin: 25px;
-  }
-}
-
-body .container .flex-container .row .lgreen-active {
+#container .grid-item .lgreen-active {
   border: solid 10px;
   background-color: #8BA870 !important;
 }
 
 @media (min-width: 411px) {
-  body .btn {
+  .btn {
     padding: 10px 10px;
     font-size: 2rem;
     line-height: 1.2;
@@ -344,7 +186,7 @@ body .container .flex-container .row .lgreen-active {
 }
 
 @media (min-width: 1080px) {
-  body .btn {
+  .btn {
     padding: 15px 15px;
     font-size: 2.5rem;
     line-height: 1.5;

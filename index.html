@@ -15,35 +15,46 @@
 		<h1 class="mobile-fonth1">Memory Test</h1>
 		<h2 class="mobile-fonth2"><span class="level-text">Level:</span><span class="level">0</span> </h2>
 	</header>
-	<main>
-		<div class="container">
-				<ul class="flex-container col-12">
-					<div class="row">
-					<li id="0" class="circle red"></li>
-					<li id="1" class="circle blue"></li>
-					<li id="2" class="circle yellow"></li>
-					</div>
-					<div class="row">
-					<li id="3" class="circle green"></li>
-					<li id="4" class="circle orange"></li>
-					<li id="5" class="circle pink"></li>
-					</div>
-					<div class="row">
-					<li id="6" class="circle purple"></li>
-					<li id="7" class="circle lblue"></li>
-					<li id="8" class="circle lgreen"></li>
-					</div>
-					</ul>
+	<!-- Layout used for css grids -->
+	<div id="container">
+		<div class="grid-item">
+			<div id="0" class="circle red"></div>
 		</div>
-	</main>
+		<div class="grid-item">
+			<div id="1" class="circle blue"></div>
+		</div>
+		<div class="grid-item">
+			<div id="2" class="circle yellow"></div>
+		</div>
+		<div class="grid-item">
+			<div id="3" class="circle green"></div>
+		</div>
+		<div class="grid-item">
+			<div id="4" class="circle orange"></div>
+		</div>
+		<div class="grid-item">
+			<div id="5" class="circle pink"></div>
+		</div>
+		<div class="grid-item">
+			<div id="6" class="circle purple"></div>
+		</div>
+		<div class="grid-item">
+			<div id="7" class="circle lblue"></div>
+		</div>
+		<div class="grid-item">
+			<div id="8" class="circle lgreen"></div>
+		</div>
+	</div>
+	<!-- Bootstrap used for buttons and responsive design -->
 	<div class="container">
 		<div class="row">
 			<div class="col-12 text-center"><button type="button" class="btn btn-dark">START</button>
+			</div>
 		</div>
-	</div>
-	<h3 class="fixed-bottom text-center d-none d-md-block">Click the highlighted colours in the same sequence as shown.
-		Good luck!</h3>
-	<script src="assets/js/main.js"></script>
+		<!-- Text hidden on smaller devices using 'd-none' and 'd-md-block' -->
+		<h3 class="fixed-bottom text-center d-none d-md-block">Click the highlighted colours in the same sequence as shown. Good luck!</h3>
+		</div>
+		<script src="assets/js/main.js"></script>
 </body>
 
 </html>

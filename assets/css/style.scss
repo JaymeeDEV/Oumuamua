@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Kalam");
 $bg: url("../images/background-img.jpg");
+
+/*Colors used for circles*/
 $colors:(red:#ff0000,
 darkRed:#8b0000,
 blue:#0000ff,
@@ -18,16 +20,27 @@ lightBlue:#7dccde,
 navy:#000080,
 lightGreen:#75e075,
 soylentGreen:#8BA870);
+
+/*Colors for rainbow, grabbed on line 106 of style.scss*/
 @keyframes rainbow {
-  0% {border-color: hsl(0, 100%, 50%);}
-  100% {border-color: hsl(255, 100%, 50%);}
+  0% {
+    border-color: hsl(0, 100%, 50%);
+  }
+  100% {
+    border-color: hsl(255, 100%, 50%);
+  }
 }
 
+/*Function grabs colors from the colors array*/
 
 @function color($circle-colors) {
   @return map-get($colors,
   $circle-colors)
 }
+
+/*Mixins for responsive design;
+used more frequently in earlier versions,
+still used for responsive buttons*/
 
 $phonetolaptop: 411px;
 
@@ -79,258 +92,126 @@ body {
       font-size: 3rem;
     }
   }
+}
 
-  .container {
-    .flex-container {
-      border-radius:10%;
-      border: 20px solid hsl(0, 100%, 50%);
-      -webkit-animation: rainbow 5s infinite alternate;
+#container {
+  /*Container styles for responsive design*/
+  margin-bottom: 5vh;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  /* Rainbow border*/
+  border-radius: 10%;
+  border: 20px solid hsl(0, 100%, 50%);
+  -webkit-animation: rainbow 5s infinite alternate;
 
-      .row {
-        justify-content: center;
-        list-style-type: none;
+  .grid-item {
+    .circle {
+      height: 12vmin;
+      width: 12vmin;
+      min-height: 60px;
+      min-width: 60px;
+      border-radius: 50%;
+      margin: 25px auto;
+    }
 
-        .red {
-          height: 60px;
-          width: 60px;
-          margin: 15px;
-          background-color: color(red);
-          border-radius: 50%;
+    .red {
+      background-color: color(red);
+    }
+    /*Use of the'!important' property is to override the base color with the active one*/
+    .red-active {
+      border: solid 10px;
+      background-color: color(darkRed) !important;
+    }
 
-          @include phonetolaptop {
-            height: 100px;
-            width: 100px;
-            margin: 15px;
-          }
+    .blue {
+      background-color: color(blue);
+    }
 
-          @include desktop {
-            height: 150px;
-            width: 150px;
-            margin: 25px;
-          }
-        }
+    .blue-active {
+      border: solid 10px;
+      background-color: color(darkBlue) !important;
+    }
 
-        .red-active {
-          border: solid 10px;
-          background-color: color(darkRed) !important;
-        }
+    .yellow {
+      background-color: color(yellow);
+    }
 
-        .blue {
-          height: 60px;
-          width: 60px;
-          margin: 15px;
-          background-color: color(blue);
-          border-radius: 50%;
+    .yellow-active {
+      border: solid 10px;
+      background-color: color(darkYellow) !important;
+    }
 
-          @include phonetolaptop {
-            height: 100px;
-            width: 100px;
-            margin: 15px;
-          }
+    .green {
+      background-color: color(green);
+    }
 
-          @include desktop {
-            height: 150px;
-            width: 150px;
-            margin: 25px;
-          }
-        }
+    .green-active {
+      border: solid 10px;
+      background-color: color(darkGreen) !important;
+    }
 
-        .blue-active {
-          border: solid 10px;
-          background-color: color(darkBlue) !important;
-        }
+    .orange {
+      background-color: color(orange);
+    }
 
-        .yellow {
-          height: 60px;
-          width: 60px;
-          margin: 15px;
-          background-color: color(yellow);
-          border-radius: 50%;
+    .orange-active {
+      border: solid 10px;
+      background-color: color(darkOrange);
+    }
 
-          @include phonetolaptop {
-            height: 100px;
-            width: 100px;
-            margin: 15px;
-          }
+    .pink {
+      background-color: color(pink);
+    }
 
-          @include desktop {
-            height: 150px;
-            width: 150px;
-            margin: 25px;
-          }
-        }
+    .pink-active {
+      border: solid 10px;
+      background-color: color(darkPink) !important;
+    }
 
-        .yellow-active {
-          border: solid 10px;
-          background-color: color(darkYellow) !important;
-        }
+    .purple {
+      background-color: color(purple);
+    }
 
-        .green {
-          height: 60px;
-          width: 60px;
-          margin: 15px;
-          background-color: color(green);
-          border-radius: 50%;
+    .purple-active {
+      border: solid 10px;
+      background-color: color(darkPurple) !important;
+    }
 
-          @include phonetolaptop {
-            height: 100px;
-            width: 100px;
-            margin: 15px;
-          }
+    .lblue {
+      background-color: color(lightBlue);
+    }
 
-          @include desktop {
-            height: 150px;
-            width: 150px;
-            margin: 25px;
-          }
-        }
+    .lblue-active {
+      border: solid 10px;
+      background-color: color(navy) !important;
+    }
 
-        .green-active {
-          border: solid 10px;
-          background-color: color(darkGreen) !important;
-        }
+    .lgreen {
+      background-color: color(lightGreen);
+    }
 
-        .orange {
-          height: 60px;
-          width: 60px;
-          margin: 15px;
-          background-color: color(orange);
-          border-radius: 50%;
-
-          @include phonetolaptop {
-            height: 100px;
-            width: 100px;
-            margin: 15px;
-          }
-
-          @include desktop {
-            height: 150px;
-            width: 150px;
-            margin: 25px;
-          }
-        }
-
-        .orange-active {
-          border: solid 10px;
-          background-color: color(darkOrange);
-        }
-
-        .pink {
-          height: 60px;
-          width: 60px;
-          margin: 15px;
-          background-color: color(pink);
-          border-radius: 50%;
-
-          @include phonetolaptop {
-            height: 100px;
-            width: 100px;
-            margin: 15px;
-          }
-
-          @include desktop {
-            height: 150px;
-            width: 150px;
-            margin: 25px;
-          }
-        }
-
-        .pink-active {
-          border: solid 10px;
-          background-color: color(darkPink) !important;
-        }
-
-        .purple {
-          height: 60px;
-          width: 60px;
-          margin: 15px;
-          background-color: color(purple);
-          border-radius: 50%;
-
-          @include phonetolaptop {
-            height: 100px;
-            width: 100px;
-            margin: 15px;
-          }
-
-          @include desktop {
-            height: 150px;
-            width: 150px;
-            margin: 25px;
-          }
-        }
-
-        .purple-active {
-          border: solid 10px;
-          background-color: color(darkPurple) !important;
-        }
-
-        .lblue {
-          height: 60px;
-          width: 60px;
-          margin: 15px;
-          background-color: color(lightBlue);
-          border-radius: 50%;
-
-          @include phonetolaptop {
-            height: 100px;
-            width: 100px;
-            margin: 15px;
-          }
-
-          @include desktop {
-            height: 150px;
-            width: 150px;
-            margin: 25px;
-          }
-        }
-
-        .lblue-active {
-          border: solid 10px;
-          background-color: color(navy) !important;
-        }
-
-        .lgreen {
-          height: 60px;
-          width: 60px;
-          margin: 15px;
-          background-color: color(lightGreen);
-          border-radius: 50%;
-
-          @include phonetolaptop {
-            height: 100px;
-            width: 100px;
-            margin: 15px;
-          }
-
-          @include desktop {
-            height: 150px;
-            width: 150px;
-            margin: 25px;
-          }
-        }
-
-        .lgreen-active {
-          border: solid 10px;
-          background-color: color(soylentGreen) !important;
-        }
-      }
+    .lgreen-active {
+      border: solid 10px;
+      background-color: color(soylentGreen) !important;
     }
   }
+}
 
-  .btn {
-    @include phonetolaptop {
-      padding: 10px 10px;
-      font-size: 2rem;
-      line-height: 1.2;
-      margin: 5px;
-    }
+.btn {
+  @include phonetolaptop {
+    padding: 10px 10px;
+    font-size: 2rem;
+    line-height: 1.2;
+    margin: 5px;
+  }
 
-    @include desktop {
-      padding: 15px 15px;
-      font-size: 2.5rem;
-      line-height: 1.5;
-      margin: 8px;
-    }
+  @include desktop {
+    padding: 15px 15px;
+    font-size: 2.5rem;
+    line-height: 1.5;
+    margin: 8px;
   }
 }
